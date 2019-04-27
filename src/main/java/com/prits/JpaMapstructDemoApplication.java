@@ -1,5 +1,6 @@
 package com.prits;
 
+import com.prits.entity.Customer;
 import com.prits.entity.Post;
 import com.prits.entity.Tag;
 import com.prits.repo.CustomerRepository;
@@ -30,11 +31,11 @@ public class JpaMapstructDemoApplication implements CommandLineRunner{
 	@Override
 	public void run(String... strings) throws Exception {
 		log.info("Application started. Loading data..");
-		/*Customer c1 = new Customer(null, "Pritesh","Patel");
+		Customer c1 = new Customer(null, "Pritesh", "Patel");
 		Customer c2 = new Customer(null, "Jon","Doe");
 		Customer c3 = new Customer(null, "Jane","Doe");
 		List<Customer> customers = Arrays.asList(c1, c2, c3);
-		repository.saveAll(customers);*/
+		repository.saveAll(customers);
 
 		//create tags
 
@@ -53,16 +54,18 @@ public class JpaMapstructDemoApplication implements CommandLineRunner{
 		//set post 1
 		Post p1 = new Post();
 		p1.setTitle("Title 1 of post 1");
-		p1.setTags(tags1);
+		//p1.setTags(tags1);
+		p1.getTags().add(t1);
+		p1.getTags().add(t2);
 
 		//set post 2
 		Post p2 = new Post();
 		p2.setTitle("Title 2 of post 2");
-		p2.setTags(tags2);
-
+		p2.getTags().add(t1);
+		//p2.getTags().add(t3);
 
 		postRepository.save(p1);
-		postRepository.save(p2);
+		//postRepository.save(p2);
 
 		log.info("Data Loaded successfully!!!");
 	}
