@@ -24,4 +24,10 @@ public class PostController {
         log.info("Service allPosts request");
         return postService.finaAllPosts();
     }
+
+    @RequestMapping("/basePosts")
+    public List<PostDto> loadBasePosts() {
+        log.info("Service allPosts request");
+        return postService.loadBasePosts();
+    }
 }

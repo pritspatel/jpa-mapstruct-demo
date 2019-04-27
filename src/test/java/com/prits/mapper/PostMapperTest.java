@@ -43,6 +43,17 @@ public class PostMapperTest {
     }
 
     @Test
+    public void baseDtoTest() throws Exception {
+        //set post 1
+        Post p1 = new Post();
+        p1.setTitle("Title 1 of post 1");
+
+        PostDto postDto = PostMapper.INSTANCE.entityToDto(p1);
+        Assert.assertNotNull(postDto);
+        Assert.assertNotNull(postDto.getTagDtos());
+        Assert.assertTrue(postDto.getTagDtos().size() == 0);
+    }
+    @Test
     public void entityListToDtoList() throws Exception {
 
     }

@@ -26,4 +26,11 @@ public class PostService {
         List<PostDto> postDtoList = PostMapper.INSTANCE.entityListToDtoList((List<Post>) posts);
         return postDtoList;
     }
+
+    public List<PostDto> loadBasePosts() {
+        log.info("Loading all base posts without childs");
+        Iterable<Post> posts = postRepository.findAll();
+        List<PostDto> postDtoList = PostMapper.INSTANCE.entityListToDtoList((List<Post>) posts);
+        return postDtoList;
+    }
 }

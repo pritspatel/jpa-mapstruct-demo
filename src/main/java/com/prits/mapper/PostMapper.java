@@ -22,7 +22,11 @@ public interface PostMapper {
     PostDto entityToDto(Post post);
 
 
+    //BasePostDto baseEntityToBaseDto(Post post);
+
+
     List<PostDto> entityListToDtoList(List<Post> posts);
+    //List<BasePostDto> baseEntityListToBaseDtoList(List<Post> posts);
 
     //Post dtoToEntity(PostDto postDto);
 
