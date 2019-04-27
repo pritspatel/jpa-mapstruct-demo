@@ -1,5 +1,6 @@
 package com.prits.web;
 
+import com.prits.dto.BasePostDto;
 import com.prits.dto.PostDto;
 import com.prits.service.PostService;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +27,7 @@ public class PostController {
     }
 
     @RequestMapping("/basePosts")
-    public List<PostDto> loadBasePosts() {
+    public List<BasePostDto> loadBasePosts() {
         log.info("Service allPosts request");
         return postService.loadBasePosts();
     }
